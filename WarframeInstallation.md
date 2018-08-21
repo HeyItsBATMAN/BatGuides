@@ -1,10 +1,12 @@
 # How to install Warframe and DXVK manually on Linux
 
-1. Get out of Wine Dependency hell
+## 1. Get out of Wine Dependency hell
+
 https://www.gloriouseggroll.tv/how-to-get-out-of-wine-dependency-hell/
 
-2. Get a copy of GlriousEggrolls Warframe Linux installer repository
-Option A: Cloning the repository
+## 2. Get a copy of GlriousEggrolls Warframe Linux installer repository
+### Option A: Cloning the repository
+
 ```
 # replace /path/to/GitRepos with the actual path to where you want to clone the repository
 cd /path/to/GitRepos
@@ -14,7 +16,8 @@ git clone https://gitlab.com/GloriousEggroll/warframe-linux.git
 cd warframe-linux
 ```
 
-Option B: Download the latest version of the installer without git
+### Option B: Download the latest version of the installer without git
+
 ```
 # replace /path/to/installer with the path where you want to download and extract the installer
 cd /path/to/installer
@@ -26,20 +29,24 @@ tar xfz warframe-linux-master.tar.gz
 cd warframe-linux-master
 ```
 
-3. Make the installer executable
+## 3. Make the installer executable
+
 ```
 chmod a+x ./install.sh
 ```
 
-4. Run the installer
+## 4. Run the installer
+
 This will configure a Warframe WinePrefix install the updater script to that directory
 
-Option A (default): Install the game to $HOME/Games/Warframe
+### Option A (default): Install the game to $HOME/Games/Warframe
+
 ```
 ./install.sh
 ```
 
-Option B (configuration): 
+### Option B (configuration): 
+
 ```
 # Set any wine variables you want to set
 
@@ -62,15 +69,18 @@ Press yes if you want them
 
 After installation you can remove the cloned repository folder or the extracted installer, depending on which one you chose
 
-5. Install DXVK
+## 5. Install DXVK
+
 Before you install DXVK make sure that you got the latest drivers you need.
 Depending on your linux distribution, you might not have access to them via your repositories.
 See the DXVK wiki for information on what latest drivers are needed:
 https://github.com/doitsujin/dxvk/wiki/Driver-support
 If you do not have the latest driver, either see if your system can upgrade to the latest driver or download an earlier version of DXVK that is compatible with your driver version.
 
-Option A: Installing the latest DXVK release version (easy)
+### Option A: Installing the latest DXVK release version (easy)
+
 Go to https://github.com/doitsujin/dxvk/releases and download the .tar.gz of the latest release
+
 ```
 cd /path/do/download/dir
 # Replace this link with the link to the latest version
@@ -93,31 +103,40 @@ export WINEPREFIX=/path/to/Warframe/WinePrefix
 ./setup_dxvk.sh
 ```
 
-Option B: Compile DXVK from source (medium)
+### Option B: Compile DXVK from source (medium)
+
 Maybe coming soon
 
 
-6. Run the updater
+## 6. Run the updater
+
 Depending on your internet connection bandwidth and harddrive speed this step could be really quick or take all day
 Take necessary steps to make sure the game and all it's dependencies can download without interruption
 
-Option A (if you pressed yes when it asked if Warframe should be put into PATH):
+### Option A (if you pressed yes when it asked if Warframe should be put into PATH):
+
 Open a Terminal and type
+
 ```
 warframe
 ```
+
 The game should update and start after the update
 You can do this anytime you want to start the game
 
-Option B (if you didn't add to path):
+### Option B (if you didn't add to path):
+
 ```
 cd /path/of/Warframe/Prefix/drive_c/Program\ Files/Warframe/
 ./warframe.sh
 ```
+
 Start this file if you want to run warframe
 
-7. (Optional) additional optimizations:
+## 7. (Optional) additional optimizations:
+
 Coming Soon, but basically edit other Environment variables in the warframe.sh and/or the updater.sh
 
-8. (Optional) add the manually installed Warframe to Lutris
+## 8. (Optional) add the manually installed Warframe to Lutris
+
 Coming Soon
